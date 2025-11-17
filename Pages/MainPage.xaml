@@ -1,0 +1,84 @@
+﻿<Page x:Class="ShoesShop.Pages.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ShoesShop.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainPage">
+
+    <Grid Background="{DynamicResource BackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                <TextBlock Text="ahead"
+                           Foreground="{DynamicResource ForegroundBrush}"
+                           FontSize="52" Margin="110,0,0,-40" />
+
+                <TextBlock Text="Skin" 
+                           Foreground="{DynamicResource ForegroundBrush}"
+                           FontSize="72" 
+                           FontWeight="Bold" 
+                           VerticalAlignment="Center" 
+                           HorizontalAlignment="Left"/>
+            </StackPanel>
+
+            <Border HorizontalAlignment="Right"
+                    Width="1"
+                    Margin="0,20,0,20"
+                    Background="{DynamicResource ThicknessBrush}"/>
+
+            <ComboBox x:Name="ThemeComboBox"
+                      Grid.Column="1"
+                      FontWeight="Medium"
+                      FontSize="20"
+                      HorizontalAlignment="Right"
+                      VerticalAlignment="Top"
+                      SelectionChanged="ThemeChanged">
+                
+                <ComboBoxItem FontSize="20" Content="Светлая"/>
+                <ComboBoxItem FontSize="20" Content="Тёмная"/>
+            </ComboBox>
+            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+
+                <TextBlock Text="Время входа" 
+                       Foreground="{DynamicResource ForegroundBrush}"
+                       FontSize="42" 
+                       FontWeight="Bold" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Center"/>
+
+                <TextBlock x:Name="CurrentTime"
+                           Text="00:00" 
+                           Foreground="{DynamicResource ForegroundBrush}"
+                           FontSize="42"  
+                           VerticalAlignment="Center" 
+                           HorizontalAlignment="Center"/>
+
+            </StackPanel>
+        </Grid>
+
+        <TextBlock Grid.Row="1"
+                   Foreground="{DynamicResource ForegroundBrush}"
+                   Text="Обувь - не просто защита для ног. Это первый шаг к вашему стилю" 
+                   FontSize="22" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" 
+                   TextWrapping="WrapWithOverflow" 
+                   Width="400"
+                   FontWeight="DemiBold"
+                   TextAlignment="Center" Margin="0,15,0,15"/>
+
+    </Grid>
+</Page>
