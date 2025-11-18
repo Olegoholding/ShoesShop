@@ -1,43 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ShoesShop.Back;
+using System.Data;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ShoesShop.Pages
 {
-    /// <summary>
-    /// Логика взаимодействия для DataPage.xaml
-    /// </summary>
     public partial class DataPage : Page
     {
-        public DataPage()
+        string Tag;
+        string Uid;
+        DatabaseInteraction db = new DatabaseInteraction();
+        public DataPage(string tag, string uid)
         {
             InitializeComponent();
-        }
+            SrcLabel.Text = $"Поиск по {uid}";
+            Tag = tag;
+            Uid = uid;
 
+            DataGrid.ItemsSource = db.GetData($"Select * from {tag}").DefaultView;
+        }
         private void Search(object sender, RoutedEventArgs e)
         {
-
+            if(SrcBox.Text == "")
+            {
+                MessageBox.Show("Сначала заполните текстовое поле!", "Ошибка!");
+                return;
+            }
+            DataGrid.ItemsSource = db.GetData($"Select * from {Tag} where {Uid} = '{SrcBox.Text}'").DefaultView;
         }
-
-        private void Add(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Delete(object sender, RoutedEventArgs e)
-        {
-
-        }
+        private void Add(object sender, RoutedEventArgs e) => db.InsertData(Tag, (DataView)DataGrid.ItemsSource);
+        private void Delete(object sender, RoutedEventArgs e) => DataGrid.ItemsSource = db.DeleteData((TextBlock)DataGrid.Columns[0].GetCellContent(DataGrid.SelectedItem), Tag).DefaultView;
     }
 }

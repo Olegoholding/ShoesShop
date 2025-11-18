@@ -20,17 +20,26 @@
             </Canvas>
         </Viewbox>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Name="Grid"  Orientation="Horizontal" HorizontalAlignment="Center">
 
             <RadioButton x:Name="SizesButton"
-                         Content="Размеры"
-                         Style="{StaticResource NavigationButton}" Checked="SizesButton_Checked"/>
+                         Content="Типы обуви"
+                         Style="{StaticResource NavigationButton}" Checked="SizesButton_Checked"
+                         Tag="Тип"
+                         Uid="Название"
+                         Click="SizesButton_Checked"/>
             <RadioButton x:Name="GoodsButton"
                          Content="Товары"
-                         Style="{StaticResource NavigationButton}"/>
+                         Style="{StaticResource NavigationButton}"
+                         Tag="Товары"
+                         Uid="Название"
+                         Click="SizesButton_Checked"/>
             <RadioButton x:Name="OrdersButton"
                          Content="Заказы"
-                         Style="{StaticResource NavigationButton}"/>
+                         Style="{StaticResource NavigationButton}"
+                         Tag="Заказы"
+                         Uid="ФамилияПокупателя"
+                         Click="SizesButton_Checked" Cursor="Hand"/>
         </StackPanel>
 
         <Border Height="1" VerticalAlignment="Bottom" Background="{DynamicResource ThicknessBrush}"/>
