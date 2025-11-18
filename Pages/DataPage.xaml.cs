@@ -17,7 +17,7 @@ namespace ShoesShop.Pages
             Tag = tag;
             Uid = uid;
 
-            DataGrid.ItemsSource = db.GetData($"Select * from {tag}").DefaultView;
+            DataGrid.ItemsSource = db.GetData($"Select * from {Tag}").DefaultView;
         }
         private void Search(object sender, RoutedEventArgs e)
         {
@@ -28,7 +28,11 @@ namespace ShoesShop.Pages
             }
             DataGrid.ItemsSource = db.GetData($"Select * from {Tag} where {Uid} = '{SrcBox.Text}'").DefaultView;
         }
-        private void Add(object sender, RoutedEventArgs e) => db.InsertData(Tag, (DataView)DataGrid.ItemsSource);
+        private void Add(object sender, RoutedEventArgs e)
+        { 
+            db.InsertData(Tag, (DataView)DataGrid.ItemsSource);
+            DataGrid.ItemsSource = db.GetData($"Select * from {Tag}").DefaultView;
+        }
         private void Delete(object sender, RoutedEventArgs e) => DataGrid.ItemsSource = db.DeleteData((TextBlock)DataGrid.Columns[0].GetCellContent(DataGrid.SelectedItem), Tag).DefaultView;
     }
 }
