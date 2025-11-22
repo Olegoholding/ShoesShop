@@ -24,7 +24,7 @@
             </Grid.RowDefinitions>
 
             <StackPanel HorizontalAlignment="Center" Margin="0,15,0,0">
-                <TextBlock Name="SrcLabel" Text="Поиск" FontSize="20" FontWeight="Medium"/>
+                <TextBlock Name="SrcLabel"  Foreground="{DynamicResource ForegroundBrush}"  Text="Поиск" FontSize="20" FontWeight="Medium"/>
                 <StackPanel Orientation="Horizontal" >
                     <TextBox Name="SrcBox"  Width="300" FontSize="28"/>
                     <Button x:Name="SrcBtn"

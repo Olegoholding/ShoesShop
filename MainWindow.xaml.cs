@@ -19,5 +19,10 @@ namespace ShoesShop
             Grid.Children.OfType<RadioButton>().ToList().ForEach(rb => rb.IsChecked = false);
             Frame.Content = new MainPage();
         }
+
+        private void StatisticButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Content = new StatisticPage();
+        }
     }
 }

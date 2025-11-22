@@ -40,6 +40,10 @@
                          Tag="Заказы"
                          Uid="ФамилияПокупателя"
                          Click="SizesButton_Checked" Cursor="Hand"/>
+            <RadioButton x:Name="StatisticButton"
+                         Content="Статистика"
+                         Style="{StaticResource NavigationButton}"
+                         Click="StatisticButton_Click" Cursor="Hand"/>
         </StackPanel>
 
         <Border Height="1" VerticalAlignment="Bottom" Background="{DynamicResource ThicknessBrush}"/>
