@@ -4,4 +4,7 @@
     <SolidColorBrush x:Key="ForegroundBrush" Color="White"/>
     <SolidColorBrush x:Key="NavigationForegroundBrush" Color="#86c688"/>
     <SolidColorBrush x:Key="ThicknessBrush" Color="#253F25"/>
+
+    <SolidColorBrush x:Key="Button" Color="#6BA56D"/>
+    <SolidColorBrush x:Key="MouseEnter" Color="#9FBCA0"/>
 </ResourceDictionary>

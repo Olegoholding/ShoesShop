@@ -21,7 +21,7 @@
         </Viewbox>
 
         <StackPanel Name="Grid"  Orientation="Horizontal" HorizontalAlignment="Center">
-
+            
             <RadioButton x:Name="SizesButton"
                          Content="Типы обуви"
                          Style="{StaticResource NavigationButton}" Checked="SizesButton_Checked"
