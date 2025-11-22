@@ -41,9 +41,10 @@
                         Foreground="White"                        
                         Click="Add"
                         Content="Добавить" 
-                        FontSize="26" 
-                        Height="40"
-                        Width="340" 
+                        FontSize="24" 
+                        FontWeight="Bold"
+                        Height="50"
+                        Width="240" 
                         Margin="0,0,0,15"/>
                 
                 <Button x:Name="DeleteBtn"
@@ -51,9 +52,10 @@
                         Foreground="White"
                         Click="Delete"
                         Content="Удалить" 
-                        FontSize="26" 
-                        Height="40"
-                        Width="340" 
+                        FontSize="24"
+                        FontWeight="Bold"
+                        Height="50"
+                        Width="240" 
                         Margin="0,0,0,30"/>
             </StackPanel>
         </Grid>
