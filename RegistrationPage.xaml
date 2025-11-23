@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Title="RegistrationPage" Height="250" Width="450" Loaded="Window_Loaded">
+        Title="RegistrationPage" Height="250" Width="450">
     <Window.Resources>
         <Storyboard x:Key="ResizeStoryboard">
             <DoubleAnimation Storyboard.TargetProperty="Height"

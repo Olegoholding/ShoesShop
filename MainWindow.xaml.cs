@@ -24,5 +24,6 @@ namespace ShoesShop
         {
             Frame.Content = new StatisticPage();
         }
+
     }
 }

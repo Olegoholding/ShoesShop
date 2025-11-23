@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ShoesShop.Back;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,36 +21,23 @@ namespace ShoesShop
     /// </summary>
     public partial class RegistrationPage : Window
     {
-        public RegistrationPage()
-        {
-            InitializeComponent();
-        }
+        public RegistrationPage() => InitializeComponent();
 
         private void SignInButton_Click(object sender, RoutedEventArgs e)
         {
-            if(!ValidationComplete())
-                return;
-
-            MainWindow mainWindow = new MainWindow();
-            Application.Current.MainWindow = mainWindow;
-            mainWindow.Show();
-            this.Close();
-        }
-
-        private bool ValidationComplete()
-        {
-            bool loginValid = !string.IsNullOrEmpty(LoginTextBox.Text);
-            bool passValid = !string.IsNullOrEmpty(PasswordTextBox.Text);
-
-            LoginValidation.Visibility = loginValid ? Visibility.Collapsed : Visibility.Visible;
-            PasswordValidation.Visibility = passValid ? Visibility.Collapsed : Visibility.Visible;
-
-            return loginValid && passValid;
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
+            DataTable dt = new DatabaseInteraction().GetData(@$"SELECT * FROM Пользователи WHERE 
+                Логин = '{LoginTextBox.Text.Trim()}' and 
+                Пароль = '{PasswordTextBox.Text.Trim()}'; ");
+            if(dt.Rows.Count == 1 )
+            {
+                LoginValidation.Visibility = PasswordValidation.Visibility = Visibility.Collapsed;
+                new MainWindow().Show();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Ошибка, проверьте введённые данные");
+            }
         }
     }
 }

@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using ShoesShop.Back;
+using System.Data;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ShoesShop.Pages
 {
@@ -23,6 +12,12 @@ namespace ShoesShop.Pages
         public StatisticPage()
         {
             InitializeComponent();
+            DataTable dt = new DatabaseInteraction().GetData("SELECT * FROM stats");
+            Popular.Text = dt.Rows[0][5].ToString();
+            Average.Text = dt.Rows[0][4].ToString();
+            Goods.Text = dt.Rows[0][3].ToString();
+            Type.Text = dt.Rows[0][2].ToString();
+            Orders.Text = dt.Rows[0][1].ToString();
         }
     }
 }

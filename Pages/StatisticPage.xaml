@@ -37,7 +37,7 @@
             <Border Height="1" Background="{DynamicResource ThicknessBrush}"  Margin="0,10,0,10"/>
 
             <TextBlock FontSize="24" Foreground="{DynamicResource ForegroundBrush}" >
-                <Run Text="Кол-во заказов:        " FontWeight="Bold"/>
+                <Run Text="Кол-во выполненных заказов:        " FontWeight="Bold"/>
                 <Run x:Name="Orders" Text="12" />
             </TextBlock>
             <Border Height="1" Background="{DynamicResource ThicknessBrush}"  Margin="0,10,0,10"/>

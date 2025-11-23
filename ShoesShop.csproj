@@ -9,11 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MySql.Data" Version="9.5.0" />
+    <Compile Remove="Img\**" />
+    <EmbeddedResource Remove="Img\**" />
+    <None Remove="Img\**" />
+    <Page Remove="Img\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Img\" />
+    <PackageReference Include="MySql.Data" Version="9.5.0" />
   </ItemGroup>
 
 </Project>
