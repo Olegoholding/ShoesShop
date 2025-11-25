@@ -1,4 +1,5 @@
 ﻿using ShoesShop.Back;
+using ShoesShop.UserControls;
 using System.Data;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,26 +14,23 @@ namespace ShoesShop.Pages
         public DataPage(string tag, string uid)
         {
             InitializeComponent();
-            SrcLabel.Text = $"Поиск по {uid}";
             Tag = tag;
             Uid = uid;
 
-            DataGrid.ItemsSource = db.GetData($"Select * from {Tag}").DefaultView;
+            LoadCards();
         }
-        private void Search(object sender, RoutedEventArgs e)
+
+        private void LoadCards()
         {
-            if(SrcBox.Text == "")
+            DataTable dataTable = db.GetData($"Select * from ShowShoes");
+            foreach (DataRow row in dataTable.Rows)
             {
-                MessageBox.Show("Сначала заполните текстовое поле!", "Ошибка!");
-                return;
+                wrapPanel.Children.Add(new GoodsCard(
+                    row["Изображение"].ToString(),
+                    row["Название"].ToString(),
+                    row["Цена"].ToString() + " руб"
+                    ));
             }
-            DataGrid.ItemsSource = db.GetData($"Select * from {Tag} where {Uid} = '{SrcBox.Text}'").DefaultView;
         }
-        private void Add(object sender, RoutedEventArgs e)
-        { 
-            db.InsertData(Tag, (DataView)DataGrid.ItemsSource);
-            DataGrid.ItemsSource = db.GetData($"Select * from {Tag}").DefaultView;
-        }
-        private void Delete(object sender, RoutedEventArgs e) => DataGrid.ItemsSource = db.DeleteData((TextBlock)DataGrid.Columns[0].GetCellContent(DataGrid.SelectedItem), Tag).DefaultView;
     }
 }
