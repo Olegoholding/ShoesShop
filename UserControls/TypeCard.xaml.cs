@@ -30,8 +30,8 @@ namespace ShoesShop.UserControls
             _id = id;
             _name = name;
 
-            LoadCard();
             InitializeComponent();
+            LoadCard();
         }
 
         private void LoadCard()

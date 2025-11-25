@@ -30,7 +30,7 @@
             <RadioButton x:Name="GoodsButton"
                          Content="Товары"
                          Style="{StaticResource NavigationButton}"
-                         Tag="showgoods"
+                         Tag="showGoods"
                          Click="SizesButton_Checked"/>
             <RadioButton x:Name="OrdersButton"
                          Content="Заказы"
@@ -41,7 +41,7 @@
                          Content="Пользователи"
                          Tag="showUsers"
                          Style="{StaticResource NavigationButton}"
-                         Click="StatisticButton_Click" Cursor="Hand"/>
+                         Click="SizesButton_Checked" Cursor="Hand"/>
         </StackPanel>
 
         <Border Height="1" VerticalAlignment="Bottom" Background="{DynamicResource ThicknessBrush}"/>

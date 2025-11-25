@@ -21,17 +21,15 @@ namespace ShoesShop.UserControls
     public partial class OrdersCard : UserControl
     {
         int _id;
-        string _firstName;
-        string _lastName;
+        string _fio;
         string _goods;
         int _count;
         int _price;
 
-        public OrdersCard(int id, string firstName, string lastName, string goods, int count, int price)
+        public OrdersCard(int id, string fio, string goods, int count, int price)
         {
             _id = id;
-            _firstName = firstName;
-            _lastName = lastName;
+            _fio = fio;
             _goods = goods;
             _count = count;
             _price = price;
@@ -43,7 +41,7 @@ namespace ShoesShop.UserControls
         private void LoadCard()
         {
             IdText.Text = "#" + _id.ToString();
-            FioText.Text = $"{_lastName + _firstName}";
+            FioText.Text = _fio;
             GoodsText.Text = $"{_goods} \t x{_count}";
             PriceText.Text = _price + " руб." ;
         }
