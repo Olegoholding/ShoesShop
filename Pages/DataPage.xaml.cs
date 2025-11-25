@@ -8,21 +8,20 @@ namespace ShoesShop.Pages
 {
     public partial class DataPage : Page
     {
-        string Tag;
-        string Uid;
+        string _tag;
         DatabaseInteraction db = new DatabaseInteraction();
-        public DataPage(string tag, string uid)
+        public DataPage(string tag)
         {
-            InitializeComponent();
-            Tag = tag;
-            Uid = uid;
+            _tag = tag;
 
+            InitializeComponent();
             LoadCards();
         }
 
+
         private void LoadCards()
         {
-            DataTable dataTable = db.GetData($"Select * from ShowShoes");
+            DataTable dataTable = db.GetData($"Select * from {_tag}");
             foreach (DataRow row in dataTable.Rows)
             {
                 wrapPanel.Children.Add(new GoodsCard(

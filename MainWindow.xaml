@@ -22,26 +22,24 @@
 
         <StackPanel Name="Grid"  Orientation="Horizontal" HorizontalAlignment="Center">
             
-            <RadioButton x:Name="SizesButton"
+            <RadioButton x:Name="TypesButton"
                          Content="Типы обуви"
                          Style="{StaticResource NavigationButton}" Checked="SizesButton_Checked"
-                         Tag="Тип"
-                         Uid="Название"
+                         Tag="showTypes"
                          Click="SizesButton_Checked"/>
             <RadioButton x:Name="GoodsButton"
                          Content="Товары"
                          Style="{StaticResource NavigationButton}"
-                         Tag="Товары"
-                         Uid="Название"
+                         Tag="showgoods"
                          Click="SizesButton_Checked"/>
             <RadioButton x:Name="OrdersButton"
                          Content="Заказы"
                          Style="{StaticResource NavigationButton}"
-                         Tag="Заказы"
-                         Uid="ФамилияПокупателя"
+                         Tag="showOrders"
                          Click="SizesButton_Checked" Cursor="Hand"/>
-            <RadioButton x:Name="StatisticButton"
-                         Content="Статистика"
+            <RadioButton x:Name="UserButton"
+                         Content="Пользователи"
+                         Tag="showUsers"
                          Style="{StaticResource NavigationButton}"
                          Click="StatisticButton_Click" Cursor="Hand"/>
         </StackPanel>
