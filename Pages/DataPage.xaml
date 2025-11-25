@@ -37,9 +37,11 @@
             </Grid>
         </Border>
 
-        <WrapPanel Grid.Row="1" Name="wrapPanel">
-            
-        </WrapPanel>
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled">
+            <WrapPanel  Name="wrapPanel">
+
+            </WrapPanel>
+        </ScrollViewer>
 
         <Border Grid.Column="1"
                 Margin="15"

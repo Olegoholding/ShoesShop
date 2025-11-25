@@ -39,17 +39,6 @@
                     Margin="0,20,0,20"
                     Background="{DynamicResource ThicknessBrush}"/>
 
-            <ComboBox x:Name="ThemeComboBox"
-                      Grid.Column="1"
-                      FontWeight="Medium"
-                      FontSize="20"
-                      HorizontalAlignment="Right"
-                      VerticalAlignment="Top"
-                      SelectionChanged="ThemeChanged">
-                
-                <ComboBoxItem FontSize="20" Content="Светлая"/>
-                <ComboBoxItem FontSize="20" Content="Тёмная"/>
-            </ComboBox>
             <StackPanel Grid.Column="1" VerticalAlignment="Center">
 
                 <TextBlock Text="Время входа" 
