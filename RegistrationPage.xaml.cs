@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace ShoesShop
 {
-    /// <summary>
-    /// Логика взаимодействия для RegistrationPage.xaml
-    /// </summary>
     public partial class RegistrationPage : Window
     {
         public RegistrationPage() => InitializeComponent();

@@ -19,8 +19,8 @@
                 <TextBlock x:Name="IdText" Text="#1" Foreground="Gray" VerticalAlignment="Center" Margin="15,15,15,15" FontSize="18" TextWrapping="Wrap"/>
                 <StackPanel Grid.Row="1">
 
-                    <TextBlock Text="ФИО" VerticalAlignment="Center" Foreground="Gray" Margin="15,0,0,0" FontSize="18" TextWrapping="Wrap"/>
-                    <TextBlock x:Name="FioText" Text="Пидоров Сергей" FontWeight="Bold" VerticalAlignment="Center" Margin="15,0,15,15" FontSize="18" TextWrapping="Wrap"/>
+                    <TextBlock Text="Фамилия" VerticalAlignment="Center" Foreground="Gray" Margin="15,0,0,0" FontSize="18" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="NameText" Text="Пидоров Сергей" FontWeight="Bold" VerticalAlignment="Center" Margin="15,0,15,15" FontSize="18" TextWrapping="Wrap"/>
 
                     <TextBlock Text="Товар" VerticalAlignment="Center" Foreground="Gray" Margin="15,0,0,0" FontSize="18" TextWrapping="Wrap"/>
                     <TextBlock x:Name="GoodsText" Text="Nike ZOV     x4" FontWeight="Bold" VerticalAlignment="Center" Margin="15,0,15,15" FontSize="18" TextWrapping="Wrap"/>

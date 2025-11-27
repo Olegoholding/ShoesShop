@@ -4,9 +4,6 @@ using System.Windows.Controls;
 
 namespace ShoesShop.Pages
 {
-    /// <summary>
-    /// Логика взаимодействия для StatisticPage.xaml
-    /// </summary>
     public partial class StatisticPage : Page
     {
         public StatisticPage()

@@ -33,7 +33,7 @@
 
                 <Border Grid.Column="0"  HorizontalAlignment="Right" Width="1" Height="20" Background="{DynamicResource ThicknessBrush}"/>
 
-                <TextBlock Cursor="Hand" Grid.Column="1" FontSize="20" Text="⌕" Foreground="{DynamicResource ThicknessBrush}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="15,0,15,0"/>
+                <TextBlock Name="SrcBtn" MouseLeftButtonDown="SrcBtn_MouseLeftButtonDown" Cursor="Hand" Grid.Column="1" FontSize="20" Text="⌕" Foreground="{DynamicResource ThicknessBrush}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="15,0,15,0"/>
             </Grid>
         </Border>
 
@@ -54,12 +54,12 @@
                     <ColumnDefinition/>
                     <ColumnDefinition  Width="auto"/>
                 </Grid.ColumnDefinitions>
-                    <ComboBox Grid.Column="0"  MinWidth="200" Style="{DynamicResource ComboBoxStyle1}" FontSize="22" Margin="0,0,15,0">
-                        <ComboBoxItem Content="fwerf"/>
-                    </ComboBox>
-                    <Border Grid.Column="0"  HorizontalAlignment="Right" Width="1" Height="20" Background="{DynamicResource ThicknessBrush}"/>
+                <ComboBox Name="DltComboBox" Grid.Column="0"  MinWidth="200" Style="{DynamicResource ComboBoxStyle1}" FontSize="22" Margin="0,0,15,0">
+                    <ComboBoxItem Content="fwerf"/>
+                </ComboBox>
+                <Border Grid.Column="0"  HorizontalAlignment="Right" Width="1" Height="20" Background="{DynamicResource ThicknessBrush}"/>
 
-                <TextBlock Cursor="Hand" Grid.Column="1" FontSize="20" Text="Удалить" Foreground="{DynamicResource ThicknessBrush}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="15,0,15,0"/>
+                <TextBlock MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"  Cursor="Hand" Grid.Column="1" FontSize="20" Text="Удалить" Foreground="{DynamicResource ThicknessBrush}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="15,0,15,0"/>
             </Grid>
         </Border>
 
@@ -71,17 +71,22 @@
             </Grid.RowDefinitions>
 
             <StackPanel x:Name="stackPanel" Margin="15,0,15,0">
-                <TextBlock Text="Изображение" FontSize="16"/>
-                <TextBox FontSize="20" Margin="0,0,0,15"/>
-                
-                <TextBlock Text="Название" FontSize="16"/>
-                <TextBox FontSize="20" Margin="0,0,0,15"/>
-                
-                <TextBlock Text="Цена" FontSize="16"/>
-                <TextBox FontSize="20" Margin="0,0,0,15"/>
+                <TextBlock Name="Label0" Text="Изображение" FontSize="10"/>
+                <TextBox Name="Text0" FontSize="20" Margin="0,0,0,15"/>
+
+                <TextBlock Name="Label1" Text="Название" FontSize="10"/>
+                <TextBox Name="Text1" FontSize="20"/>
+                <TextBlock Name="Label2" Text="Цена" FontSize="10"/>
+                <TextBox Name="Text2" FontSize="20" Margin="0,0,0,10"/>
+                <TextBlock Name="Label3" Text="Цена" FontSize="10"/>
+                <TextBox Name="Text3" FontSize="20" Margin="0,0,0,10"/>
+                <TextBlock Name="Label4" Text="Цена" FontSize="10"/>
+                <TextBox Name="Text4" FontSize="20" Margin="0,0,0,10"/>
+                <TextBlock Name="Label5" Text="Цена" FontSize="10"/>
+                <TextBox Name="Text5"  FontSize="20" />
             </StackPanel>
 
-            <Button Grid.Row="1" Margin="15" Width="200" Height="50" Style="{DynamicResource button}" Foreground="White" FontSize="20" FontWeight="Bold" Content="Добавить"/>
+            <Button Click="Button_Click" Grid.Row="1" Margin="15" Width="200" Height="50" Style="{DynamicResource button}" Foreground="White" FontSize="20" FontWeight="Bold" Content="Добавить"/>
         </Grid>
     </Grid>
 </Page>

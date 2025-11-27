@@ -13,17 +13,15 @@ namespace ShoesShop
             InitializeComponent();
             Frame.Content = new MainPage();
         }
-        private void SizesButton_Checked(object sender, RoutedEventArgs e) => Frame.Content = new DataPage(((RadioButton)sender).Tag.ToString());
+        private void SizesButton_Checked(object sender, RoutedEventArgs e) => Frame.Content = new DataPage(((RadioButton)sender).Tag.ToString(), ((RadioButton)sender).Uid.ToString());
         private void ToMainPage(object sender, MouseButtonEventArgs e)
         {
             Grid.Children.OfType<RadioButton>().ToList().ForEach(rb => rb.IsChecked = false);
             Frame.Content = new MainPage();
         }
-
         private void StatisticButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Content = new StatisticPage();
         }
-
     }
 }

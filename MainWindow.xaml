@@ -25,21 +25,25 @@
             <RadioButton x:Name="TypesButton"
                          Content="Типы обуви"
                          Style="{StaticResource NavigationButton}" Checked="SizesButton_Checked"
-                         Tag="showTypes"
+                         Tag="Тип"
+                         Uid="TypeCards"
                          Click="SizesButton_Checked"/>
             <RadioButton x:Name="GoodsButton"
                          Content="Товары"
                          Style="{StaticResource NavigationButton}"
-                         Tag="showGoods"
+                         Tag="Товары"
+                         Uid="GoodsCard"
                          Click="SizesButton_Checked"/>
             <RadioButton x:Name="OrdersButton"
                          Content="Заказы"
                          Style="{StaticResource NavigationButton}"
-                         Tag="showOrders"
+                         Tag="Заказы"
+                         Uid="OrdersCard"
                          Click="SizesButton_Checked" Cursor="Hand"/>
             <RadioButton x:Name="UserButton"
                          Content="Пользователи"
-                         Tag="showUsers"
+                         Tag="Пользователи"
+                         Uid="UserCards"
                          Style="{StaticResource NavigationButton}"
                          Click="SizesButton_Checked" Cursor="Hand"/>
         </StackPanel>
